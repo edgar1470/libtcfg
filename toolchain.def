@@ -1,0 +1,23 @@
+# export CROSS?=arm-hisiv300-linux-
+
+export CC:=$(CROSS)gcc
+export C++:=$(CROSS)g++
+export AR:=$(CROSS)ar
+export ECHO=echo
+export STRIP:=$(CROSS)strip
+
+CFLAGS += -DBUILD_DATE=\"`date +%Y%m%d`\"
+CFLAGS += -DBUILD_TIME=\"`date +%T`\"
+CFLAGS += -fdata-sections
+CFLAGS += -ffunction-sections
+LDFLAGS += -Wl,--gc-sections
+
+export DEBUG_ON=1
+ifeq ($(DEBUG_ON),1)
+CFLAGS += -g
+endif
+
+# -- Common Message, please don't remove. --
+MSG_SPLIT_LINE =
+MSG_COMPILING = @$(ECHO) "   Compiling <$<>"
+MSG_GOAL_OK = @$(ECHO) "***" $(GOAL) "is built successfully! ***"
