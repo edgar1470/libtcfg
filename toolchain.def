@@ -6,7 +6,7 @@ export AR:=$(CROSS)ar
 export ECHO=echo
 export STRIP:=$(CROSS)strip
 
-CFLAGS += -DBUILD_DATE=\"`date +%Y%m%d`\"
+CFLAGS += -DBUILD_DATE=\"`date +%F`\"
 CFLAGS += -DBUILD_TIME=\"`date +%T`\"
 CFLAGS += -fdata-sections
 CFLAGS += -ffunction-sections

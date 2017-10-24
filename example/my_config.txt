@@ -2,7 +2,7 @@
 # recommend config file format
 #
 
-[settings]  # parser will ignore this line , just for configure readable
+[group1]  # parser will use this to allow the same key in multi group
 key1 =  Hi, this is a string! # can add comment here
 key2 =  12345
 key3 =  3.14

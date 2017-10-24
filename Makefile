@@ -20,6 +20,3 @@ all:
 
 clean:
 	+$(COMMAND)
-
-release:
-	tar -cv
